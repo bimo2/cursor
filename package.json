@@ -1,0 +1,16 @@
+{
+  "name": "cursor",
+  "description": "Cursor/agent extensions",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "yarn@4.18.0",
+  "bin": {
+    "build": "build.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.2",
+    "prettier": "^3.9.6",
+    "typescript": "^7.0.2"
+  }
+}

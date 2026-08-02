@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es2025",
+    "lib": ["esnext"],
+    "types": ["node"],
+    "noEmit": true,
+    "skipLibCheck": true,
+    "incremental": true,
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "verbatimModuleSyntax": true,
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "erasableSyntaxOnly": true
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules"]
+}
