@@ -1,0 +1,9 @@
+# macos
+*.DS_Store
+
+# node
+.yarn/
+node_modules/
+
+# typescript
+*.tsbuildinfo
