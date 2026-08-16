@@ -1,4 +1,4 @@
-import type { Extension } from '../../typescript/types.js';
+import type { Extension } from '../../typescript/types.d.ts';
 
 export default {
   id: 'oled',
@@ -12,7 +12,37 @@ export default {
       label: 'Cursor OLED',
       type: 'color-theme',
       scheme: 'dark',
-      colors: {},
+      colors: {
+        text: '#ffffff',
+        background: '#010203',
+        primary: '#ffffff',
+        secondary: '#d0d1d2',
+        error: '#ff2146',
+        warning: '#e6f520',
+        info: '#2194ff',
+        debug: '#b45eff',
+        added: '#1cd673',
+        deleted: '#ff2146',
+        modified: '#2194ff',
+        terminal: {
+          black: '#262626',
+          red: '#ff2146',
+          green: '#1cd673',
+          yellow: '#e6f520',
+          blue: '#2194ff',
+          magenta: '#b45eff',
+          cyan: '#34dbed',
+          white: '#d1d1d1',
+          brightBlack: '#5c5c5c',
+          brightRed: '#ff5974',
+          brightGreen: '#55e096',
+          brightYellow: '#ecf858',
+          brightBlue: '#59afff',
+          brightMagenta: '#c786ff',
+          brightCyan: '#67e4f2',
+          brightWhite: '#dddddd',
+        },
+      },
     },
     {
       id: 'cursor-oled',
