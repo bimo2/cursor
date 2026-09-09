@@ -1,7 +1,7 @@
-import type { Config } from "prettier";
+import type { Config } from 'prettier';
 
 export default {
   printWidth: 100,
   singleQuote: true,
-  quoteProps: "consistent",
+  quoteProps: 'consistent',
 } satisfies Config;

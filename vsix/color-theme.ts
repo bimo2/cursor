@@ -2,6 +2,7 @@ import type { ColorTheme } from '../typescript/types.d.ts';
 import color, { type ColorInstance } from 'color';
 
 export function colorTheme(theme: ColorTheme) {
+  const { terminal, tokens } = theme.colors;
   const text = color(theme.colors.text);
   const background = color(theme.colors.background);
   const primary = color(theme.colors.primary);
@@ -727,22 +728,22 @@ export function colorTheme(theme: ColorTheme) {
       'terminal.background': background.hex(),
       'terminal.border': ease(background, 0.08).hex(),
       'terminal.foreground': text.hex(),
-      'terminal.ansiBlack': color(theme.colors.terminal.black).hex(),
-      'terminal.ansiBlue': color(theme.colors.terminal.blue).hex(),
-      'terminal.ansiBrightBlack': color(theme.colors.terminal.brightBlack).hex(),
-      'terminal.ansiBrightBlue': color(theme.colors.terminal.brightBlue).hex(),
-      'terminal.ansiBrightCyan': color(theme.colors.terminal.brightCyan).hex(),
-      'terminal.ansiBrightGreen': color(theme.colors.terminal.brightGreen).hex(),
-      'terminal.ansiBrightMagenta': color(theme.colors.terminal.brightMagenta).hex(),
-      'terminal.ansiBrightRed': color(theme.colors.terminal.brightRed).hex(),
-      'terminal.ansiBrightWhite': color(theme.colors.terminal.brightWhite).hex(),
-      'terminal.ansiBrightYellow': color(theme.colors.terminal.brightYellow).hex(),
-      'terminal.ansiCyan': color(theme.colors.terminal.cyan).hex(),
-      'terminal.ansiGreen': color(theme.colors.terminal.green).hex(),
-      'terminal.ansiMagenta': color(theme.colors.terminal.magenta).hex(),
-      'terminal.ansiRed': color(theme.colors.terminal.red).hex(),
-      'terminal.ansiWhite': color(theme.colors.terminal.white).hex(),
-      'terminal.ansiYellow': color(theme.colors.terminal.yellow).hex(),
+      'terminal.ansiBlack': color(terminal.black).hex(),
+      'terminal.ansiBlue': color(terminal.blue).hex(),
+      'terminal.ansiBrightBlack': color(terminal.brightBlack).hex(),
+      'terminal.ansiBrightBlue': color(terminal.brightBlue).hex(),
+      'terminal.ansiBrightCyan': color(terminal.brightCyan).hex(),
+      'terminal.ansiBrightGreen': color(terminal.brightGreen).hex(),
+      'terminal.ansiBrightMagenta': color(terminal.brightMagenta).hex(),
+      'terminal.ansiBrightRed': color(terminal.brightRed).hex(),
+      'terminal.ansiBrightWhite': color(terminal.brightWhite).hex(),
+      'terminal.ansiBrightYellow': color(terminal.brightYellow).hex(),
+      'terminal.ansiCyan': color(terminal.cyan).hex(),
+      'terminal.ansiGreen': color(terminal.green).hex(),
+      'terminal.ansiMagenta': color(terminal.magenta).hex(),
+      'terminal.ansiRed': color(terminal.red).hex(),
+      'terminal.ansiWhite': color(terminal.white).hex(),
+      'terminal.ansiYellow': color(terminal.yellow).hex(),
       'terminal.selectionBackground': primary.alpha(0.24).hexa(),
       'terminal.selectionForeground': text.hex(),
       'terminal.inactiveSelectionBackground': primary.alpha(0.24).hexa(),
@@ -865,11 +866,11 @@ export function colorTheme(theme: ColorTheme) {
 
       // Source Control Graph Colors - see: https://code.visualstudio.com/api/references/theme-color#source-control-graph-colors
       'scmGraph.historyItemHoverLabelForeground': contrast(primary).hex(),
-      'scmGraph.foreground1': color(theme.colors.terminal.blue).hex(),
-      'scmGraph.foreground2': color(theme.colors.terminal.yellow).hex(),
-      'scmGraph.foreground3': color(theme.colors.terminal.red).hex(),
-      'scmGraph.foreground4': color(theme.colors.terminal.green).hex(),
-      'scmGraph.foreground5': color(theme.colors.terminal.magenta).hex(),
+      'scmGraph.foreground1': color(terminal.blue).hex(),
+      'scmGraph.foreground2': color(terminal.yellow).hex(),
+      'scmGraph.foreground3': color(terminal.red).hex(),
+      'scmGraph.foreground4': color(terminal.green).hex(),
+      'scmGraph.foreground5': color(terminal.magenta).hex(),
       'scmGraph.historyItemHoverAdditionsForeground': added.hex(),
       'scmGraph.historyItemHoverDeletionsForeground': deleted.hex(),
       'scmGraph.historyItemRefColor': added.hex(),
@@ -1000,12 +1001,12 @@ export function colorTheme(theme: ColorTheme) {
       // Chart Colors - see: https://code.visualstudio.com/api/references/theme-color#chart-colors
       'charts.foreground': text.hex(),
       'charts.lines': primary.hex(),
-      'charts.red': color(theme.colors.terminal.red).hex(),
-      'charts.blue': color(theme.colors.terminal.blue).hex(),
-      'charts.yellow': color(theme.colors.terminal.yellow).hex(),
-      'charts.orange': color(theme.colors.terminal.cyan).hex(),
-      'charts.green': color(theme.colors.terminal.green).hex(),
-      'charts.purple': color(theme.colors.terminal.magenta).hex(),
+      'charts.red': color(terminal.red).hex(),
+      'charts.blue': color(terminal.blue).hex(),
+      'charts.yellow': color(terminal.yellow).hex(),
+      'charts.orange': color(terminal.cyan).hex(),
+      'charts.green': color(terminal.green).hex(),
+      'charts.purple': color(terminal.magenta).hex(),
       'chart.line': primary.hex(),
       'chart.axis': text.hex(),
       'chart.guide': ease(background, 0.2).hex(),
@@ -1050,6 +1051,223 @@ export function colorTheme(theme: ColorTheme) {
     },
     semanticHighlighting: true,
     semanticTokenColors: {},
-    tokenColors: [],
+    tokenColors: [
+      {
+        scope: 'source',
+        settings: {
+          foreground: color(tokens.default).hex(),
+        },
+      },
+      {
+        scope: [
+          'entity.name.function.preprocessor',
+          'keyword',
+          'keyword.control',
+          'keyword.operator.expression',
+          'keyword.operator.new',
+          'keyword.operator.sizeof',
+          'keyword.other',
+          'meta.preprocessor',
+          'punctuation.definition.directive',
+          'punctuation.definition.keyword',
+          'punctuation.definition.storage.type',
+          'storage.modifier',
+          'storage.type',
+        ],
+        settings: {
+          foreground: color(tokens.keyword).hex(),
+        },
+      },
+      {
+        scope: [
+          'entity.name.function',
+          'support.class.component',
+          'support.function',
+          'variable.function',
+        ],
+        settings: {
+          foreground: color(tokens.function).hex(),
+        },
+      },
+      {
+        scope: [
+          'constant',
+          'constant.character',
+          'constant.language',
+          'constant.numeric',
+          'entity.name.tag',
+          'keyword.other.unit',
+          'markup.inline.raw',
+          'meta.preprocessor.numeric',
+          'punctuation.definition.constant',
+          'punctuation.definition.raw',
+          'support.constant',
+          'support.function.builtin',
+          'variable.language',
+        ],
+        settings: {
+          foreground: color(tokens.literal).hex(),
+        },
+      },
+      {
+        scope: [
+          'constant.other.database-name',
+          'constant.other.variable',
+          'entity.name.command',
+          'entity.name.variable',
+          'variable',
+          'variable.other',
+          'variable.parameter',
+        ],
+        settings: {
+          foreground: color(tokens.variable).hex(),
+        },
+      },
+      {
+        scope: [
+          'constant.other.option',
+          'constant.other.table-name',
+          'entity.other.attribute-name',
+          'meta.object-literal.key',
+          'meta.object.member',
+          'punctuation.support',
+          'support.type.property-name',
+          'variable.other.member',
+          'variable.other.object.property',
+          'variable.other.property',
+
+          // yaml
+          'entity.name.tag.yaml',
+        ],
+        settings: {
+          foreground: color(tokens.attribute).hex(),
+        },
+      },
+      {
+        scope: [
+          'entity.name.class',
+          'entity.name.enum',
+          'entity.name.interface',
+          'entity.name.type',
+          'entity.name.type.enum',
+          'entity.name.type.interface',
+          'entity.other.inherited-class',
+          'support.type',
+
+          // css
+          'entity.other.attribute-name.class.css',
+          'entity.other.attribute-name.id.css',
+          'punctuation.definition.entity.css',
+        ],
+        settings: {
+          foreground: color(tokens.type).hex(),
+        },
+      },
+      {
+        scope: ['entity.name.type.class', 'entity.name.type.module'],
+        settings: {
+          fontStyle: '',
+        },
+      },
+      {
+        scope: [
+          'entity.name.type',
+          'entity.other.inherited-class',
+          'meta.protocol-list',
+          'support.type.builtin',
+          'support.type.posix-reserved',
+          'support.type.primitive',
+        ],
+        settings: {
+          fontStyle: 'italic',
+        },
+      },
+      {
+        scope: ['markup.heading', 'punctuation.definition.heading'],
+        settings: {
+          fontStyle: 'bold',
+          foreground: color(tokens.keyword).hex(),
+        },
+      },
+      {
+        scope: ['markup.bold'],
+        settings: {
+          fontStyle: 'bold',
+        },
+      },
+      {
+        scope: ['markup.italic'],
+        settings: {
+          fontStyle: 'italic',
+        },
+      },
+      {
+        scope: ['markup.underline', 'markup.underline.link'],
+        settings: {
+          fontStyle: 'underline',
+        },
+      },
+      {
+        scope: ['markup.strikethrough'],
+        settings: {
+          fontStyle: 'strikethrough',
+        },
+      },
+      {
+        scope: ['markup.quote', 'markup.quote.markdown', 'punctuation.definition.quote'],
+        settings: {
+          foreground: ease(color(tokens.default), 0.3).hex(),
+        },
+      },
+      {
+        scope: [
+          'punctuation.definition.string',
+          'string',
+          'string.quoted',
+          'string.regexp',
+          'string.template',
+        ],
+        settings: {
+          foreground: color(tokens.string).hex(),
+        },
+      },
+      {
+        scope: ['comment', 'comment.block', 'comment.line', 'punctuation.definition.comment'],
+        settings: {
+          fontStyle: 'italic',
+          foreground: color(tokens.comment).hex(),
+        },
+      },
+      {
+        scope: [
+          'constant.language.import-export-all',
+          'keyword.operator',
+          'meta.brace',
+          'punctuation',
+          'punctuation.definition',
+          'punctuation.section',
+          'punctuation.separator',
+          'punctuation.terminator',
+          'storage.modifier.array',
+          'storage.type.function.arrow',
+        ],
+        settings: {
+          foreground: color(tokens.other).hex(),
+        },
+      },
+      {
+        scope: ['invalid.deprecated'],
+        settings: {
+          fontStyle: 'strikethrough',
+          foreground: color(tokens.default).hex(),
+        },
+      },
+      {
+        scope: ['invalid', 'invalid.illegal'],
+        settings: {
+          foreground: error.hex(),
+        },
+      },
+    ],
   };
 }
