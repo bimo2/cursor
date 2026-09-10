@@ -35,15 +35,15 @@ function oled(tokens: Partial<TokenColors>) {
     terminal: o1,
     tokens: {
       default: '#ffffff',
-      comment: '#676768',
-      keyword: '#b4b4b5',
+      comment: '#606061',
+      keyword: '#bdbdbd',
       variable: '#ffffff',
       function: '#e4e4e5',
       type: '#ffffff',
-      attribute: '#cccccd',
-      literal: '#b4b4b5',
-      string: '#9c9c9d',
-      other: '#848485',
+      attribute: '#d1d1d1',
+      literal: '#bdbdbd',
+      string: '#999a9a',
+      other: '#a9aaaa',
       ...tokens,
     },
   } satisfies Colors;
@@ -52,7 +52,7 @@ function oled(tokens: Partial<TokenColors>) {
 export default {
   id: 'oled',
   name: 'OLED',
-  description: 'Cursor OLED theme',
+  description: 'Cursor OLED themes',
   version: '1.0.0',
   icon: 'oled.png',
   exports: [
@@ -62,8 +62,29 @@ export default {
       type: 'color-theme',
       scheme: 'dark',
       colors: oled({
+        keyword: '#afafff',
+        function: '#7bd6cc',
+        literal: '#69acff',
+      }),
+    },
+    {
+      id: 'cursor-oss',
+      label: 'Cursor OSS',
+      type: 'color-theme',
+      scheme: 'dark',
+      colors: oled({
         keyword: '#409fff',
         literal: '#409fff',
+      }),
+    },
+    {
+      id: 'cursor-tls',
+      label: 'Cursor TLS',
+      type: 'color-theme',
+      scheme: 'dark',
+      colors: oled({
+        keyword: '#ff365b',
+        literal: '#ff365b',
       }),
     },
     {
