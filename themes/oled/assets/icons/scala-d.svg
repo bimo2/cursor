@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg
+  width="24px"
+  height="24px"
+  viewBox="0 0 24 24"
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+  <title>scala-d</title>
+  <g id="scala-d" stroke="none" fill="none" fill-rule="nonzero">
+    <g id="scala" fill="color(display-p3 0.877 0.280 0.270)">
+      <path
+        d="M4.589,24 C9.126,24 18.399,22.484 19.41,21 L19.41,15.271 C18.453,16.679 9.126,18.183 4.589,18.183 L4.589,24 Z M4.589,16.365 C9.126,16.365 18.399,14.849 19.41,13.365 L19.41,7.636 C18.453,9.044 9.126,10.548 4.589,10.548 L4.589,16.365 L4.589,16.365 Z M4.589,8.729 C9.126,8.729 18.399,7.213 19.41,5.729 L19.41,0 C18.453,1.408 9.126,2.912 4.589,2.912 L4.589,8.729 Z"
+        id="Shape"
+      />
+    </g>
+  </g>
+</svg>

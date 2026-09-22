@@ -32,19 +32,19 @@ import { colorTheme, manifest, iconTheme, productIconTheme } from './vsix/index.
           );
 
           break;
-        case 'icon-theme':
-          await fs.cp(
-            path.join('themes', extension.id, theme.assets),
-            path.join(folder, theme.assets),
-            { recursive: true },
-          );
+        case 'icon-theme': {
+          const directory = path.join('themes', extension.id, theme.assets);
+          const files = await fs.readdir(directory);
+
+          await fs.cp(directory, path.join(folder, theme.assets), { recursive: true });
 
           await fs.writeFile(
             path.join(folder, `${theme.id}-icon-theme.json`),
-            JSON.stringify(iconTheme(theme), null, 2),
+            JSON.stringify(iconTheme(files, theme), null, 2),
           );
 
           break;
+        }
         case 'product-icon-theme':
           const font = `${theme.assets}.woff`;
 

@@ -9,9 +9,10 @@
     "build": "build.ts"
   },
   "devDependencies": {
-    "@types/node": "^26.5.0",
+    "@prettier/plugin-xml": "^3.4.2",
+    "@types/node": "^26.6.2",
     "color": "^5.0.3",
-    "prettier": "^3.9.6",
+    "prettier": "^3.9.8",
     "typescript": "^7.0.2"
   }
 }
