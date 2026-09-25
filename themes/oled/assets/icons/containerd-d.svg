@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg
+  width="24px"
+  height="24px"
+  viewBox="0 0 24 24"
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+  <title>containerd-d</title>
+  <g id="containerd-d" stroke="none" fill="none" fill-rule="nonzero">
+    <g id="containerd" fill="color(display-p3 1.000 1.000 1.000)">
+      <path
+        d="M3.629,0 L3.629,24 L20.37,24 L20.37,0 L3.629,0 Z M17.59,21.208 L6.421,21.208 L6.421,10.604 L14.233,10.604 L14.233,6.692 L17.579,6.692 L17.579,21.208 L17.59,21.208 Z M9.767,13.396 L14.233,13.396 L14.233,18.416 L9.767,18.416 L9.767,13.396 Z"
+        id="Shape"
+      />
+    </g>
+  </g>
+</svg>

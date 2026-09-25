@@ -95,14 +95,14 @@ function config(files: string[], ...suffix: string[]) {
       'xml': find('xml'),
       'plist': find('xml'),
 
+      // SVG
+      'svg': find('svg'),
+
       // HTML
       'html': find('html'),
 
       // CSS
       'css': find('css'),
-
-      // SVG
-      'svg': find('svg'),
 
       // MD
       'md': find('md'),
@@ -118,105 +118,193 @@ function config(files: string[], ...suffix: string[]) {
       // PDF
       'pdf': find('pdf'),
 
-      // JavaScript
+      // JavaScript - ES2026
       'js': find('javascript'),
       'jsx': find('javascript'),
       'config.js': find('javascript', '3'),
 
-      // TypeScript
+      // TypeScript - 7.0.2
       'ts': find('typescript'),
       'tsx': find('typescript'),
       'd.ts': find('typescript', '2'),
       'config.ts': find('typescript', '3'),
 
-      // Header
+      // C - C23
       'h': find('header'),
+      'c': find('c'),
+
+      // C++ - C++23
       'hpp': find('header'),
       'hh': find('header'),
       'hxx': find('header'),
-      'pxd': find('header'),
-
-      // C
-      'c': find('c'),
-
-      // C++
       'cpp': find('cplusplus'),
       'cc': find('cplusplus'),
       'cxx': find('cplusplus'),
 
-      // Objective-C
+      // Objective-C - 2.0
       'm': find('objc'),
 
-      // Objective-C++
+      // Objective-C++ - 2.0
       'mm': find('objcplusplus'),
 
-      // Swift
+      // Swift - 6.4
       'swift': find('swift'),
 
-      // Ruby
+      // Ruby - 4.0.7
       'rb': find('ruby'),
       'rake': find('ruby'),
       'gemspec': find('ruby', '2'),
 
-      // Python
+      // Python - 3.14.7
       'py': find('python'),
       'pyi': find('python'),
+      'pxd': find('header'),
       'pyx': find('python'),
 
-      // Scala
+      // Scala - 3.9.0
       'scala': find('scala'),
       'sc': find('scala'),
       'sbt': find('scala', '2'),
 
-      // Kotlin
+      // Kotlin - 2.4.20
       'kt': find('kotlin'),
       'kts': find('kotlin'),
       'gradle.kts': find('kotlin', '2'),
+
+      // Cursor - 3.22.7
+      'mdc': find('cursor') ?? find('md'),
+
+      // Framer - 5.1.0
+      'glsl': find('framer'),
+      'hlsl': find('framer'),
+      'wgsl': find('framer'),
+      'metal': find('framer'),
+
+      // GraphQL - 17.0.2
+      'graphql': find('graphql'),
+      'gql': find('graphql'),
+      'graphqls': find('graphql'),
+
+      // Prisma - 8.0.0
+      'prisma': find('prisma'),
     },
     fileNames: {
       // text
+      '.gitignore': find('text'),
+      '.gitattributes': find('text'),
+      '.gitmodules': find('text'),
+      '.gitconfig': find('text'),
+
+      // JavaScript - ES2026
+      'jsonfig.json': find('javascript-3'),
+
+      // TypeScript - 7.0.2
+      'tsconfig.json': find('typescript-3'),
+
+      // C - C23
+      '.clang-format': find('text'),
+      '.clang-format-ignore': find('text'),
+      '.clang-tidy': find('text'),
+
+      // Swift - 6.4
+      'package.swift': find('swift-2'),
+      'package.resolved': find('swift-2'),
+      '.swift-format': find('swift-2'),
+      '.swift-format-ignore': find('swift-2'),
+
+      // Ruby - 4.0.7
+      'gemfile': find('ruby-2'),
+      'gemfile.lock': find('ruby-2'),
+      'rakefile': find('ruby-2'),
+
+      // Python - 3.14.7
+      'pyproject.toml': find('python-2'),
+      'pylock.toml': find('python-2'),
+      'pyvenv.cfg': find('python-2'),
+      'uv.lock': find('python-2'),
+
+      // .env - 18.0.3
       '.env': find('text'),
       '.env.ci': find('text'),
       '.env.staging': find('text'),
       '.env.production': find('text'),
       '.env.vault': find('text'),
       '.env.me': find('text'),
-      '.clang-format': find('text'),
-      '.clang-format-ignore': find('text'),
 
-      // JavaScript
-      'jsonfig.json': find('javascript-3'),
+      // Cursor - 3.22.7
+      '.cursorignore': find('cursor'),
+      'agents.md': find('cursor'),
+      'readme': find('cursor'),
+      'readme.md': find('cursor'),
+      'readme.txt': find('cursor'),
+      'license': find('cursor'),
 
-      // TypeScript
-      'tsconfig.json': find('typescript-3'),
+      // Containerd - 2.4.0
+      'containerfile': find('containerd'),
+      '.containerignore': find('containerd'),
 
-      // Swift
-      'package.swift': find('swift', '2'),
-      'package.resolved': find('swift-2'),
-      '.swift-version': find('swift-2'),
-      '.swift-format': find('swift-2'),
-      '.swift-format-ignore': find('swift-2'),
+      // Docker - 29.8.1
+      'dockerfile': find('docker'),
+      '.dockerignore': find('docker'),
 
-      // Ruby
-      'gemfile': find('ruby-2'),
-      'gemfile.lock': find('ruby-2'),
-      'rakefile': find('ruby-2'),
-      '.ruby-version': find('ruby-2'),
+      // Node - 24.21.0
+      'package.json': find('node'),
+      'package-lock.json': find('node'),
+      '.yarnrc.yml': find('node'),
+      'yarn.lock': find('node'),
 
-      // Python
-      'pyproject.toml': find('python-2'),
-      'pylock.toml': find('python-2'),
-      '.python-version': find('python-2'),
-      'uv.lock': find('python-2'),
+      // Deno - 2.9.7
+      'deno.json': find('deno'),
+      'deno.jsonc': find('deno'),
+      'deno.lock': find('deno'),
 
-      // Scala
-      'build.properties': find('scala-2'),
+      // GraphQL - 17.0.2
+      '.graphqlrc': find('graphql'),
+      '.graphqlrc.js': find('graphql'),
+      '.graphqlrc.ts': find('graphql'),
+      '.graphqlrc.json': find('graphql'),
+      '.graphqlrc.yml': find('graphql'),
+      '.graphqlrc.yaml': find('graphql'),
+      '.graphqlrc.toml': find('graphql'),
+      'graphql.config.js': find('graphql'),
+      'graphql.config.ts': find('graphql'),
+      'graphql.config.json': find('graphql'),
+      'graphql.config.toml': find('graphql'),
 
-      // Kotlin
-      'gradle.properties': find('kotlin-2'),
-      'gradle-wrapper.properties': find('kotlin-2'),
-      'gradle.lockfile': find('kotlin-2'),
-      'libs.versions.toml': find('kotlin-2'),
+      // Prisma - 8.0.0
+      'prisma.config.ts': find('prisma'),
+
+      // Prettier - 3.9.9
+      '.prettierrc': find('prettier'),
+      '.prettierrc.js': find('prettier'),
+      '.prettierrc.ts': find('prettier'),
+      '.prettierrc.json': find('prettier'),
+      '.prettierrc.json5': find('prettier'),
+      '.prettierrc.yml': find('prettier'),
+      '.prettierrc.yaml': find('prettier'),
+      '.prettierrc.toml': find('prettier'),
+      'prettier.config.js': find('prettier'),
+      'prettier.config.ts': find('prettier'),
+
+      // ESLint - 10.11.0
+      'eslint.config.js': find('eslint'),
+      'eslint.config.ts': find('eslint'),
+
+      // Next - 16.3.6
+      'next.config.js': find('next'),
+      'next.config.ts': find('next'),
+      'next-env.d.ts': find('next'),
+
+      // Vite - 8.3.1
+      'vite.config.js': find('vite'),
+      'vite.config.ts': find('vite'),
+
+      // Vitest - 5.0.1
+      'vitest.config.js': find('vite'),
+      'vitest.config.ts': find('vite'),
+
+      // Codecov - 11.3.1
+      'codecov.yml': find('codecov'),
     },
     // folderNames: { ... },
   };

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg
+  width="24px"
+  height="24px"
+  viewBox="0 0 24 24"
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+  <title>framer</title>
+  <g id="framer" stroke="none" fill="none" fill-rule="nonzero">
+    <g transform="translate(1, 1)" fill="color(display-p3 0.000 0.333 1.000)" id="Shape">
+      <path
+        d="M3.66666667,0 L18.3333333,0 L18.3333333,7.33333333 L11,7.33333333 L3.66666667,0 Z M3.66666667,7.33333333 L11,7.33333333 L18.3333333,14.6666667 L3.66666667,14.6666667 L3.66666667,7.33333333 Z M3.66666667,14.6666667 L11,14.6666667 L11,22 L3.66666667,14.6666667 Z"
+      />
+    </g>
+  </g>
+</svg>
