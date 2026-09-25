@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg
+  width="24px"
+  height="24px"
+  viewBox="0 0 24 24"
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+  <title>framer</title>
+  <g id="framer" stroke="none" fill="none" fill-rule="nonzero">
+    <g fill="color(display-p3 0.000 0.333 1.000)" id="Shape">
+      <path
+        d="M4,0 L20,0 L20,8 L12,8 L4,0 Z M4,8 L12,8 L20,16 L4,16 L4,8 Z M4,16 L12,16 L12,24 L4,16 Z"
+      />
+    </g>
+  </g>
+</svg>
