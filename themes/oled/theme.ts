@@ -97,7 +97,7 @@ export default {
       id: 'cursor-oled',
       label: 'Cursor OLED',
       type: 'product-icon-theme',
-      assets: 'assets/octicons',
+      assets: 'assets/cursor',
     },
   ],
 } satisfies Extension;
