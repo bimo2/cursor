@@ -2,6 +2,7 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { webfont } from 'webfont';
 import { colorTheme, manifest, iconTheme, productIconTheme } from './vsix/index.ts';
 
 (async function () {
@@ -45,18 +46,41 @@ import { colorTheme, manifest, iconTheme, productIconTheme } from './vsix/index.
 
           break;
         }
-        case 'product-icon-theme':
-          const font = `${theme.assets}.woff`;
+        case 'product-icon-theme': {
+          const directory = path.join('themes', extension.id, theme.assets);
+          const files = (await fs.readdir(directory)).sort();
 
-          await fs.mkdir(path.dirname(path.join(folder, font)), { recursive: true });
-          await fs.writeFile(path.join(folder, font), '');
+          const font = await webfont({
+            files: files.map((file) => path.join(directory, file)),
+            fontName: theme.id,
+            fontHeight: 16,
+            formats: ['woff2'],
+            sort: true,
+          });
+
+          if (!font.woff2) break;
+
+          const map = new Map<string, string>();
+
+          for (const { metadata } of font.glyphsData ?? []) {
+            const name = metadata?.name;
+            const codepoint = metadata?.unicode?.[0]?.codePointAt(0);
+
+            if (!name || !codepoint) continue;
+
+            map.set(name, `\\${codepoint.toString(16).toUpperCase()}`);
+          }
+
+          await fs.mkdir(path.dirname(path.join(folder, theme.assets)), { recursive: true });
+          await fs.writeFile(path.join(folder, `${theme.assets}.woff2`), font.woff2);
 
           await fs.writeFile(
             path.join(folder, `${theme.id}-product-icon-theme.json`),
-            JSON.stringify(productIconTheme(theme), null, 2),
+            JSON.stringify(productIconTheme(map, theme), null, 2),
           );
 
           break;
+        }
       }
     }
 
