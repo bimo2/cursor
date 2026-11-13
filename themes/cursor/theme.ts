@@ -1,4 +1,4 @@
-import type { Colors, Extension, TerminalColors, TokenColors } from '../../vsix/vsix.d.ts';
+import type { Colors, TerminalColors, TokenColors, Extension } from '../../vsix/vsix.d.ts';
 
 const o1: TerminalColors = {
   black: '#262626',
@@ -52,7 +52,7 @@ function oled(tokens: Partial<TokenColors>) {
 export default {
   id: 'cursor',
   name: 'Cursor',
-  description: 'Cursor themes',
+  description: 'Cursor IDE themes',
   version: '1.0.0',
   icon: 'cursor.png',
   exports: [

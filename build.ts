@@ -3,7 +3,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { webfont } from 'webfont';
-import { colorTheme, manifest, iconTheme, productIconTheme } from './vsix/index.ts';
+import { colorTheme, iconTheme, productIconTheme, manifest } from './vsix/index.ts';
 
 (async function () {
   await fs.rm('out', { recursive: true, force: true });

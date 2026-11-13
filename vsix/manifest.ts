@@ -1,4 +1,4 @@
-import type { ColorTheme, Extension, IconTheme, ProductIconTheme } from './vsix.d.ts';
+import type { ColorTheme, IconTheme, ProductIconTheme, Extension } from './vsix.d.ts';
 
 export function manifest(extension: Extension) {
   const themes = extension.exports
